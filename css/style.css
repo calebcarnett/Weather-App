@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  
+.weather {
+margin: 2px;
+padding: 40px;
+display: flex;
+
+}
+
+.all {
+    display:flex;
+    flex-direction: wrap;
+}
+
+
+.header {
+background-color: rgb(19, 75, 170);
+ font-weight: bold;
+ font-size: 30px;
+ padding: 20px;
+ color: white;
+ text-align: center;
+ margin-bottom: 20px;
+ width: 100%;
+}
+#search {
+    width: auto;
+    border-radius: 5px;
+}
+#button {
+background-color: rgb(12, 107, 150);
+border-radius: 5px;
+border: none;
+color: white;
+text-align: center;
+width: 200px;
+padding: 7px;
+
+}
+
+#searchbar {
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.divbox {
+display: flex;
+  border: 2px solid;
+  width: 100%;
+  display: inline-block;
+  border: none;
+}
+
+.firstdiv {
+    border-style: solid 5px;
+    border-color: black;
+    border-radius: 7px;
+    width: 80%;
+    height: 200px;
+    margin-top: 2px;
+    border: solid 1px;
+}
+.seconddiv {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    height: 200px;
+    
+}
+
+.box-1 {
+    margin-left: 20px;
+    line-height:  45px;
+}
+
+
+.box-2 {
+    background-color: rgb(12, 53, 122);
+    border-radius: 7px;
+    color: white;
+    width: 15%;
+    height: 100px;
+    padding: 2px;
+    line-height: 24px;
+    
+}
+
+#msg li {
+    background-color: blue;
+    width: 100px;
+}
+
+
