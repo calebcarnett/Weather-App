@@ -74,10 +74,6 @@ display: flex;
     
 }
 
-.box-1 {
-    margin-left: 20px;
-    line-height:  45px;
-}
 
 
 .box-2 {
@@ -91,9 +87,19 @@ display: flex;
     
 }
 
-#msg li {
-    background-color: blue;
-    width: 100px;
+
+
+#current-day {
+    font-weight: bolder;
+    margin-left: 20px;
+    line-height:  45px;
+
 }
+
+#current-day li {
+    font-weight: bold;
+    
+}
+
 
 
