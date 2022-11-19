@@ -4,17 +4,11 @@ var cities = document.getElementById('cities');
 var message = document.getElementById('msg');
 var currentDay = document.getElementById('current-day');
 var iconId = document.getElementById('emoji-icon');
-var boxTwo = document.getElementById('box-2');
-var boxThree = document.getElementById('box-3');
-var boxFour = document.getElementById('box-4');
-var boxFive = document.getElementById('box-5');
-var boxSix = document.getElementById('box-6');
 var date = document.getElementById('date')
 var timeOfDay = dayjs().format("MM/DD/YYYY");
-date.textContent = timeOfDay;
 
+//get api for current day forecast
 function getApiCurrentDay(city) {
-
 var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=13d9c9ac41d36325eb94010be86f6d76"  + "&units=imperial";
 
 fetch(queryURL)
@@ -23,6 +17,7 @@ fetch(queryURL)
 })
 .then(function (data) {
     console.log(data)
+        date.textContent = timeOfDay;
         var weatherIcon = data.weather[0].icon 
         var iconUrl = "http://openweathermap.org/img/w/" + weatherIcon + ".png"
         iconId.setAttribute("src", iconUrl)
@@ -38,12 +33,13 @@ fetch(queryURL)
         humidity.textContent = "Humidity: " + data.main.humidity + " %"
 });
 }
-
+//event listener to run function and parse the data
  button.addEventListener("click", function(event) {
     event.preventDefault();
-    
-   
-   var searching = {
+    var list = document.createElement("li")
+    message.append(list)
+    list.style.padding = '10px';
+    var searching = {
     city: search.value.trim()
     };
     
@@ -51,17 +47,15 @@ fetch(queryURL)
  
     var lastSearch = JSON.parse(localStorage.getItem('searching'));
             if (lastSearch !== null) {
-            var list = document.createElement('li').innerHTML = lastSearch.city;
-            message.append(list)
-            console.log(list)
+            list = list.innerHTML = lastSearch.city;
+            //This brings in the data from the current and five day forecast
             getApiCurrentDay(list);  
             getApiFiveDay(list)
     }
+    
 });
 
-  // var iconTwo = "http://openweathermap.org/img/w/" + data.list[0].main.temp + ".png"
-        // boxTwo.setAttribute("src", iconTwo)
-
+//get api for five day forecast
 function getApiFiveDay(city) {
     var queryFiveDay = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=13d9c9ac41d36325eb94010be86f6d76"  + "&units=imperial"
     fetch(queryFiveDay)
