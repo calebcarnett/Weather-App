@@ -1,105 +1,152 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family:Arial, Helvetica, sans-serif;
   }
-  
+
+body {
+    background-size: cover;
+    background-image: url("../clouds.jpg");
+}
+
 .weather {
-margin: 2px;
-padding: 40px;
 display: flex;
-
+flex-wrap: wrap;
+width: 70%;
+margin-left: auto;
+margin-right: auto;
 }
-
-.all {
-    display:flex;
-    flex-direction: wrap;
-}
-
 
 .header {
 background-color: rgb(19, 75, 170);
  font-weight: bold;
- font-size: 30px;
+ font-size: 200%;
  padding: 20px;
  color: white;
  text-align: center;
  margin-bottom: 20px;
- width: 100%;
+ opacity: 80%;
 }
+
 #search {
     width: auto;
     border-radius: 5px;
-}
-#button {
-background-color: rgb(12, 107, 150);
-border-radius: 5px;
-border: none;
-color: white;
-text-align: center;
-width: 200px;
-padding: 7px;
-
+    flex: 1;
 }
 
-#searchbar {
-    width: 200px;
+#search-bar {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
+    color: white;
+}
+
+.search-text {
+    background-color: rgb(106, 163, 232);
+    color: black;
+    text-align: center;
     padding: 5px;
     border-radius: 5px;
 }
 
-.divbox {
-display: flex;
-  border: 2px solid;
-  width: 100%;
-  display: inline-block;
-  border: none;
+#button {
+    background-color: rgb(46, 172, 230);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 7px;
+    opacity: 80%;
 }
 
-.firstdiv {
-    border-style: solid 5px;
+h1 {
+color: black;
+font-size: 150%;
+text-align: center;
+opacity: 80%;
+border-radius: 7px;
+margin-top: 2px;
+background-color: lightskyblue;
+}
+
+.current-day-forecast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 60%;
+    background-color: lightskyblue;
     border-color: black;
+    border-style: solid 5px;
     border-radius: 7px;
-    width: 80%;
-    height: 200px;
     margin-top: 2px;
     border: solid 1px;
-}
-.seconddiv {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    height: 200px;
-    
+  
 }
 
 
-
-.box-2 {
-    background-color: rgb(12, 53, 122);
-    border-radius: 7px;
-    color: white;
-    width: 15%;
-    height: 100px;
-    padding: 2px;
-    line-height: 24px;
-    
+#date {
+    font-size: 150%;
+    color: black;
+    text-align: center;
+    opacity: 80%;
 }
-
-
 
 #current-day {
+    text-align: center;
     font-weight: bolder;
-    margin-left: 20px;
-    line-height:  45px;
-
+    line-height:  40px; 
+    background-color: lightskyblue;
+    opacity: 80%;
+    margin-left:10px;
+    margin-right: 10px;
 }
 
 #current-day li {
     font-weight: bold;
-    
+
 }
 
+#emoji-icon {
+    width: 60px;
+    height: 60px;
+}
 
+.forecast {
+    margin-left: 5px;
+    list-style-type: none;
+    font-weight: bold;
+    margin-bottom: 100px;
+    background-color: lightskyblue;
+    opacity: 80%;
+    border-color: black;
+    border-radius: 7px;
+
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.columnbox {
+    display: flex;
+    flex: 3;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+#msg {
+    list-style-type: none;
+    text-align: center;
+    width: auto;
+    background-color: lightskyblue;
+    border-color: black;
+    border-style: solid 5px;
+    border-radius: 7px;
+    color: black;
+}
 

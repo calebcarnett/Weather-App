@@ -4,55 +4,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link  rel="stylesheet" href="./css/style.css">
+  <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link  rel="stylesheet" href="./css/style.css">
   <title>Document</title>
 </head>
 <body class="body">
- 
 <header class="header">Weather Dashboard</header>
-<div class="all">
+
 <main class="weather">
-
   <article class="search">
-  <h1>Search for a city:</h1>
-  <input type="text" placeholder="Search.." id="search-bar" data-city-search>
-    <br>
-  <button id="button">
-    Search
-  </button>
-  <p>Search History</p>
-  <ul id="msg">
-  </ul>
+      <h1>
+        Search for a city
+      </h1>
+      <input style="color: black; font-weight: bolder;" type="text" placeholder="Search.." id="search-bar" data-city-search>
+      <br>
+    <button id="button">
+      Search
+    </button>
+    <ul 
+    id="msg" style="color: black;">
+    </ul>
+  </article> 
+
+<div class="columnbox">
+<div class="current-day-forecast"> 
+  <p id="date"> </p>
+  <ul id="current-day" style="list-style-type: none;" > </ul> 
+  <img id="emoji-icon"/>
+</div>
+
+<h2 style="text-align: center;">Forecast</h2>
+
+<div class="row">
+  <div class="forecast"></div>
+  <div class="forecast"></div>
+  <div class="forecast"></div>
+  <div class="forecast"></div>
+  <div class="forecast"></div>
+</div>
+</div>
 </main>
-
-<div class="divbox">
-<div class="firstdiv"> 
-  <ul id="current-day" style="list-style-type: none;">
-  </ul>
-</div>
-<h2 style="margin: 20px;">5 Day Forecast:</h2>
-
-<div class="seconddiv">
-  <ul class="box-2" style="list-style-type: none;">
-    <li> <p>Date:</p> <p>Temp:</p> <p>Wind:</p>  <p>Humidity:</p> </li>
-  </ul>
-  <ul class="box-2" style="list-style-type: none;">
-    <li> <p>Date:</p> <p>Temp:</p> <p>Wind:</p>  <p>Humidity:</p> </li>
-  </ul>
-  <ul class="box-2" style="list-style-type: none;">
-    <li> <p>Date:</p> <p>Temp:</p> <p>Wind:</p>  <p>Humidity:</p> </li>
-  </ul>
-  <ul class="box-2" style="list-style-type: none;">
-    <li> <p>Date:</p> <p>Temp:</p> <p>Wind:</p>  <p>Humidity:</p> </li>
-  </ul>
-  <ul class="box-2" style="list-style-type: none;">
-    <li> <p>Date:</p> <p>Temp:</p> <p>Wind:</p>  <p>Humidity:</p> </li>
-  </ul>
-</div>
-</div>
-
-</div>
-
 </body>
 <script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </html>

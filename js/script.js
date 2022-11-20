@@ -15,6 +15,7 @@ fetch(queryURL)
 .then(function(response) {
     return response.json();
 })
+
 .then(function (data) {
     console.log(data)
         date.textContent = timeOfDay;
@@ -33,27 +34,6 @@ fetch(queryURL)
         humidity.textContent = "Humidity: " + data.main.humidity + " %"
 });
 }
-//event listener to run function and parse the data
- button.addEventListener("click", function(event) {
-    event.preventDefault();
-    var list = document.createElement("li")
-    message.append(list)
-    list.style.padding = '10px';
-    var searching = {
-    city: search.value.trim()
-    };
-    
-    localStorage.setItem('searching', JSON.stringify(searching));
- 
-    var lastSearch = JSON.parse(localStorage.getItem('searching'));
-            if (lastSearch !== null) {
-            list = list.innerHTML = lastSearch.city;
-            //This brings in the data from the current and five day forecast
-            getApiCurrentDay(list);  
-            getApiFiveDay(list)
-    }
-    
-});
 
 //get api for five day forecast
 function getApiFiveDay(city) {
@@ -84,5 +64,34 @@ function getApiFiveDay(city) {
             humidityTwo.textContent = "humidity: " + data.list[forecastIndex].main.humidity + "%"
            console.log(data.list[forecastIndex])
         }
+        
     });
     }
+    //event listener to run function and parse the data
+    button.addEventListener("click", function(event) {
+    event.preventDefault();
+    var list = document.createElement("li")
+    message.append(list)
+    list.style.padding = '10px';
+    var searching = {
+    city: search.value.trim()
+    };
+    
+    localStorage.setItem('searching', JSON.stringify(searching));
+ 
+    var lastSearch = JSON.parse(localStorage.getItem('searching'));
+            if (lastSearch !== null) {
+            list = list.innerHTML = lastSearch.city;
+            //This brings in the data from the current and five day forecast
+            getApiCurrentDay(list);  
+            getApiFiveDay(list)
+    }
+    
+});
+
+    message.addEventListener("click", function(){
+        getApiCurrentDay(city);
+        getApiFiveDay(city)
+    })
+
+
