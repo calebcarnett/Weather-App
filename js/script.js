@@ -9,7 +9,7 @@ var timeOfDay = dayjs().format("MM/DD/YYYY");
 
 //get api for current day forecast
 function getApiCurrentDay(city) {
-var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=13d9c9ac41d36325eb94010be86f6d76"  + "&units=imperial";
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=13d9c9ac41d36325eb94010be86f6d76"  + "&units=imperial";
 
 fetch(queryURL)
 .then(function(response) {
@@ -20,7 +20,7 @@ fetch(queryURL)
     console.log(data)
         date.textContent = timeOfDay;
         var weatherIcon = data.weather[0].icon 
-        var iconUrl = "http://openweathermap.org/img/w/" + weatherIcon + ".png"
+        var iconUrl = "https://openweathermap.org/img/w/" + weatherIcon + ".png"
         iconId.setAttribute("src", iconUrl)
         currentDay.textContent = "City: " + data.name 
         var temp = document.createElement("li")
@@ -37,7 +37,7 @@ fetch(queryURL)
 
 //get api for five day forecast
 function getApiFiveDay(city) {
-    var queryFiveDay = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=13d9c9ac41d36325eb94010be86f6d76"  + "&units=imperial"
+    var queryFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=13d9c9ac41d36325eb94010be86f6d76"  + "&units=imperial"
     fetch(queryFiveDay)
     .then(function(response) {
         return response.json(); 
