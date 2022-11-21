@@ -85,13 +85,21 @@ function getApiFiveDay(city) {
             //This brings in the data from the current and five day forecast
             getApiCurrentDay(list);  
             getApiFiveDay(list)
+         
     }
-    
+    //add an event listener to the message ul to search recently searched, learned that if you add an event listener and dynamically attach elements 
+    //it will work for all the elements
+   message.addEventListener("click",function(){
+        getApiCurrentDay(list);  
+        getApiFiveDay(list)
+   });
+
 });
 
-    message.addEventListener("click", function(){
-        getApiCurrentDay(city);
-        getApiFiveDay(city)
-    })
+
+  
+
+
+   
 
 

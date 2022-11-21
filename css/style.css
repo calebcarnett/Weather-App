@@ -139,7 +139,7 @@ background-color: lightskyblue;
     flex-direction: column;
     align-items: center;
 }
-#msg {
+#msg li {
     list-style-type: none;
     text-align: center;
     width: auto;
@@ -147,6 +147,6 @@ background-color: lightskyblue;
     border-color: black;
     border-style: solid 5px;
     border-radius: 7px;
-    color: black;
+    margin-top: 10px;
 }
 
