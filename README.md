@@ -1,5 +1,5 @@
 #  Weather APP
-This project challenged me to use third party APIS and use CSS knowledge of flexboxes to create a responsive design without using a CSS framework. This was my first time working with an API and was challenged to pull weather updates from a weather API. To make some improvements to this project, I would not have my search history repeat the same city and not save random text if it is not a valid city. Also my history is a bit buggy and doesn't always change the current city. Overall this challenge taught me a lot about API's, javascript, CSS, and pushed me to look back on a lot of prior activites/projects and apply them. 
+This project challenged me to use third party APIS and use CSS knowledge of flexboxes to create a responsive design without using a CSS framework. This was my first time working with an API and was challenged to pull weather updates from a weather API. To make some improvements to this project, I would not have my search history repeat the same city and not save random text if it is not a valid city. Also my history is a bit buggy and doesn't always change the current city. Overall this challenge taught me a lot about API's, javascript, CSS, and pushed me to look back on prior activites/projects and apply them. 
 ## User Story
 
 ```
