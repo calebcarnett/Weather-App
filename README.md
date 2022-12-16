@@ -1,5 +1,5 @@
 #  Weather APP
-This project challenged me to use third party APIS and use CSS knowledge of flexboxes to create a responsive design without using a CSS framework. This was my first time working with an API and was challenged to pull weather updates from a weather API. To make some improvements to this project, I would not have my search history repeat the same city and not save random text if it is not a valid city. Also my history is a bit buggy and doesn't always change the current city. Overall this challenge taught me a lot about API's, javascript, CSS, and pushed me to look back on prior activites/projects and apply them. 
+This project challenged me to use third party APIS and use CSS knowledge of flexboxes to create a responsive design without using a CSS framework. This was my first time working with an API and was challenged to pull weather updates from a weather API. To make some improvements to this project, I would updated the UI and fix the time stamp so that it is not pulling from the API's format, giving it a cleaner look. Overall this challenge taught me a lot about API's, javascript, CSS, and pushed me to look back on prior activites/projects and apply them. 
 ## User Story
 
 ```
@@ -30,6 +30,5 @@ The following image shows the web application's appearance and functionality:
 https://calebcarnett.github.io/Weather-App/
 ## Credits
 
-* Special thanks to my tutor, AskBCS, stack overflow, TA's, and my instructor
 * https://stackoverflow.com/questions/42111854/javascript-addeventlistener-on-all-created-li-elements
 * https://openweathermap.org/
