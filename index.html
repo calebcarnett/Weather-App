@@ -1,56 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link  rel="stylesheet" href="./css/style.css">
-  <title>Document</title>
-</head>
-<body class="body">
-<header class="header">Weather Dashboard</header>
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+      <path
+        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+      />
+    </svg>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body class="body">
+    <header class="header"></header>
 
-<main class="weather">
-  <article class="search">
-    <button id="clear-history">Clear History</button>
-      <h1>
-        Search for a city
-      </h1>
-      <input style="color: black; font-weight: bolder;" type="text" placeholder="Search.." id="search-bar">
-      <br>
-    <button id="button">
-      Search
-    </button>
-    <ul 
-    id="msg" style="color: black;">
-    </ul>
-  </article> 
+    <main class="weather">
+      <article class="search">
+        <button id="clear-history">Clear History</button>
+        <div class="input-group mb-3" >
+          <input
+          id="search-bar"
+            type="text"
+            class="form-control"
+            placeholder="Search"
+            aria-label="search"
+            aria-describedby="button-addon2"
+          />
+          <button class="btn btn-outline-secondary" type="button" id="button">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
 
-<div class="columnbox">
-<div class="current-day-forecast"> 
-  <p id="date"> </p>
-  <ul id="current-day" style="list-style-type: none;" > </ul> 
-  <img id="emoji-icon"/>
-</div>
+        <ul id="msg" style="color: black"></ul>
+      </article>
 
-<h2 style="text-align: center;">Forecast</h2>
+      <div class="columnbox">
+        <div class="current-day-forecast">
+          <h1>Current Weather</h1>
+        </div>
+        <div>
+          <p id="date"></p>
+          <ul id="current-day" style="list-style-type: none"  class="list-group"></ul>
+          <img id="emoji-icon" />
+        </div>
 
-<div class="row">
-  <div class="forecast"></div>
-  <div class="forecast"></div>
-  <div class="forecast"></div>
-  <div class="forecast"></div>
-  <div class="forecast"></div>
-</div>
-</div>
-</main>
-</body>
-<script src="js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <h2 style="text-align: center">Forecast</h2>
+
+        <div class="row">
+          <div class="forecast"></div>
+          <div class="forecast"></div>
+          <div class="forecast"></div>
+          <div class="forecast"></div>
+          <div class="forecast"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <footer></footer>
+  <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </html>

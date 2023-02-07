@@ -52,9 +52,8 @@ function getApiFiveDay(city) {
       return response.json();
     })
     .then(function (data) {
-      
       for (let index = 0; index < foreCastElement.length; index++) {
-        foreCastElement[index].innerHTML = ""
+        foreCastElement[index].innerHTML = "";
         const forecastIndex = index * 8 + 4;
         var hours = document.createElement("li");
         hours.textContent = data.list[forecastIndex].dt_txt;
@@ -88,40 +87,39 @@ function getApiFiveDay(city) {
 }
 //event listener to run function and parse the data
 button.addEventListener("click", function (event) {
-    const searchedCity = search.value.trim()
-    getApiCurrentDay(searchedCity)
-    getApiFiveDay(searchedCity)
-    lastSearch.push(searchedCity)
-    localStorage.setItem("lastSearched", JSON.stringify(lastSearch))
-    renderHistoryList()
+  const searchedCity = search.value.trim();
+  getApiCurrentDay(searchedCity);
+  getApiFiveDay(searchedCity);
+  lastSearch.push(searchedCity);
+  localStorage.setItem("lastSearched", JSON.stringify(lastSearch));
+  renderHistoryList();
 });
 
 //changed the function to have the search and message variables to empty strings so that every time the function is ran, it will
-//replace the text and not append more lists 
+//replace the text and not append more lists
 function renderHistoryList() {
-    message.innerHTML = ""
-    for(let i = 0; i < lastSearch.length; i++) {
-        const historyLi = document.createElement("li")
-        historyLi.innerHTML = lastSearch[i]
-        message.append(historyLi)
-        historyLi.addEventListener("click", function(event) {
-            event.preventDefault()
-            getApiCurrentDay(historyLi.innerHTML)
-            getApiFiveDay(historyLi.innerHTML)
-            search.innerHTML = ""
-        })
-    }
+  message.innerHTML = "";
+  for (let i = 0; i < lastSearch.length; i++) {
+    const historyLi = document.createElement("li");
+    historyLi.innerHTML = lastSearch[i];
+    message.append(historyLi);
+    historyLi.addEventListener("click", function (event) {
+      event.preventDefault();
+      getApiCurrentDay(historyLi.innerHTML);
+      getApiFiveDay(historyLi.innerHTML);
+      search.innerHTML = "";
+    });
+  }
 }
 
-SearchHistoryButton = document.getElementById("clear-history")
+SearchHistoryButton = document.getElementById("clear-history");
 
-SearchHistoryButton.addEventListener("click", function(){
-    clearHistory();
-})
+SearchHistoryButton.addEventListener("click", function () {
+  clearHistory();
+});
 //added a function to clear the search history, clears the local storage, sets the recent city list to an empty string and then reloads the page
 function clearHistory() {
-    localStorage.clear(lastSearch)
-    message.innerHTML = ""
-    location.reload()
-   
+  localStorage.clear(lastSearch);
+  message.innerHTML = "";
+  location.reload();
 }

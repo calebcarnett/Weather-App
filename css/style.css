@@ -7,59 +7,26 @@
 
 body {
     background-size: cover;
-    background-image: url("../clouds.jpg");
+    background-image: url("../images/weatherapp.jpg");
 }
 
 .weather {
 display: flex;
 flex-wrap: wrap;
-width: 70%;
+
 margin-left: auto;
 margin-right: auto;
 }
 
 .header {
-background-color: rgb(19, 75, 170);
+background-color: rgba(233, 86, 37, 0.847);
  font-weight: bold;
  font-size: 200%;
- padding: 20px;
+ padding: 10px;
  color: white;
  text-align: center;
  margin-bottom: 20px;
- opacity: 80%;
-}
 
-#search {
-    width: auto;
-    border-radius: 5px;
-    flex: 1;
-}
-
-#search-bar {
-    width: 100%;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: white;
-    color: white;
-}
-
-.search-text {
-    background-color: rgb(106, 163, 232);
-    color: black;
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-#button {
-    background-color: rgb(46, 172, 230);
-    border-radius: 5px;
-    border: none;
-    color: white;
-    text-align: center;
-    width: 100%;
-    padding: 7px;
-    opacity: 80%;
 }
 
 h1 {
@@ -69,22 +36,11 @@ text-align: center;
 opacity: 80%;
 border-radius: 7px;
 margin-top: 2px;
-background-color: lightskyblue;
+
 }
 
 .current-day-forecast {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 60%;
-    background-color: lightskyblue;
-    border-color: black;
-    border-style: solid 5px;
-    border-radius: 7px;
-    margin-top: 2px;
-    border: solid 1px;
-  
+
 }
 
 
@@ -99,7 +55,6 @@ background-color: lightskyblue;
     text-align: center;
     font-weight: bolder;
     line-height:  40px; 
-    background-color: lightskyblue;
     opacity: 80%;
     margin-left:10px;
     margin-right: 10px;
@@ -111,8 +66,8 @@ background-color: lightskyblue;
 }
 
 #emoji-icon {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
 }
 
 .forecast {
@@ -120,7 +75,6 @@ background-color: lightskyblue;
     list-style-type: none;
     font-weight: bold;
     margin-bottom: 100px;
-    background-color: lightskyblue;
     opacity: 80%;
     border-color: black;
     border-radius: 7px;
@@ -143,10 +97,23 @@ background-color: lightskyblue;
     list-style-type: none;
     text-align: center;
     width: auto;
-    background-color: lightskyblue;
     border-color: black;
     border-style: solid 5px;
     border-radius: 7px;
     margin-top: 10px;
 }
 
+#clear-history {
+background: none;
+border: none;
+font-size: 15px;
+}
+
+footer {
+
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
