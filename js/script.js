@@ -1,5 +1,7 @@
 var search = document.getElementById("search-bar");
 var button = document.getElementById("button");
+var temperature = document.getElementById("temp");
+var currentSky = document.getElementById("current-sky");
 var cities = document.getElementById("cities");
 var message = document.getElementById("msg");
 var currentDay = document.getElementById("current-day");
