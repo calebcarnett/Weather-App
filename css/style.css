@@ -6,8 +6,12 @@
   }
 
 body {
-    background-size: cover;
-    background-image: url("");
+    background: rgb(157,175,184);
+background: linear-gradient(90deg, rgba(157,175,184,1) 0%, rgba(60,92,184,1) 42%);
+}
+
+ .columnbox h1 {
+    font-weight: bold;
 }
 
 .weather {
@@ -17,15 +21,23 @@ body {
 }
 
 .btn-outline-secondary{
-background-color: white;
+background-color: black;
 border-radius: 0px;
 border: none;
-color: black;
+color: white;
+}
+
+.middlecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .header {
     display: flex;
-    background-color: rgba(17, 77, 168, 0.847);
+    justify-content: center;
+    background: rgb(157,175,184);
+    background: linear-gradient(90deg, rgba(157,175,184,1) 0%, rgba(60,92,184,1) 42%);
     font-weight: bold;
     font-size: 200%;
     padding: 10px;
@@ -37,11 +49,13 @@ color: black;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    border-bottom: .5px solid black;
+    box-shadow: 10px 5px 5px rgb(190, 198, 202);
 }
 
 h1 {
 color: black;
-font-size: 150%;
+font-size: 100%;
 text-align: center;
 opacity: 80%;
 border-radius: 7px;
@@ -51,8 +65,8 @@ margin-top: 2px;
 
 .columnbox {
 display: flex;
+justify-content: center;
 width: 380px;
-
 
 }
 /* .columnboxtwo {
@@ -62,10 +76,11 @@ width: 380px;
 
 .current-forecast {
     display: flex;
+    font-size: 25px;
 }
 
 #date {
-    font-size: 30px;
+    font-size: 15px;
     color: black;
     text-align: center;
 }
@@ -79,10 +94,19 @@ width: 380px;
     margin-right: 10px;
 }
 
+#current-city {
+opacity: 75%;
+font-size: 25px;
+font-family:  Arial, sans-serif;
+font-weight: bolder;
+
+}
+
 #current-day li {
     font-weight: bold;
 
 }
+
 
 #emoji-icon {
     width: 30px;
@@ -107,10 +131,7 @@ width: 380px;
 
 .columnbox {
     display: flex;
-    flex: 3;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
+    
 }
 #msg li {
     list-style-type: none;

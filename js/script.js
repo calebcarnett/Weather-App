@@ -2,6 +2,7 @@ var search = document.getElementById("search-bar");
 var button = document.getElementById("button");
 var temperature = document.getElementById("temp");
 var currentSky = document.getElementById("current-sky");
+var currentcity = document.getElementById("current-city");
 var cities = document.getElementById("cities");
 var message = document.getElementById("msg");
 var currentDay = document.getElementById("current-day");
@@ -12,6 +13,37 @@ const foreCastElement = document.querySelectorAll(".forecast");
 let lastSearch = JSON.parse(localStorage.getItem("lastSearched")) || [];
 
 date.textContent = timeOfDay;
+
+function getAPI() {
+  var queryURL =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    "San Antonio" +
+    "&appid=13d9c9ac41d36325eb94010be86f6d76" +
+    "&units=imperial";
+
+  fetch(queryURL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      var weatherIcon = data.weather[0].icon;
+      var iconUrl = "https://openweathermap.org/img/w/" + weatherIcon + ".png";
+      iconId.setAttribute("src", iconUrl);
+      currentcity.textContent = data.name;
+      temperature.textContent = data.main.temp + "°F";
+      currentSky.textContent = data.weather[0].description;
+      var wind = document.createElement("li");
+      currentDay.append(wind);
+      wind.textContent = "Wind: " + data.wind.speed + " MPH";
+      var humidity = document.createElement("li");
+      currentDay.append(humidity);
+      humidity.textContent = "Humidity: " + data.main.humidity + " %";
+    });
+}
+
+getAPI();
+
 //get api for current day forecast
 function getApiCurrentDay(city) {
   var queryURL =
