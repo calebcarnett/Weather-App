@@ -14,11 +14,7 @@ background: linear-gradient(90deg, rgba(212,239,255,1) 4%, rgba(98,127,210,1) 39
     font-weight: bold;
 }
 
-.weather {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 .btn-outline-secondary{
 background-color: black;
@@ -60,6 +56,10 @@ opacity: 80%;
 border-radius: 7px;
 margin-top: 2px;
 
+}
+
+header h1 {
+    margin-left: 35px;
 }
 
 .columnbox {
@@ -134,7 +134,7 @@ border-radius: 5px  5px 0px 0px;
 
 .columnbox {
     justify-content: center;
-    width: 40%;
+    width: 35%;
     flex-direction: column;
     margin-left: 15%;
  
@@ -184,7 +184,17 @@ padding-left: 20px;
 color: white;
 }
 
-@media screen and (max-width: 760px) {
+
+
+  .main-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+  }
+
+  @media screen and (max-width: 760px) {
     .columnbox  {
         justify-content: center;
         width: 80%;
@@ -208,4 +218,11 @@ color: white;
         flex-direction: column;
         align-items: center;
     }
+   
+    .main-section{
+        display: flex;
+        justify-content: right;
+
+    }
   }
+  

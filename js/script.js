@@ -12,8 +12,29 @@ var timeOfDay = dayjs().format("MMMM D");
 var hourOfDay = dayjs().format("h:mm a");
 const foreCastElement = document.querySelectorAll(".forecast");
 let lastSearch = JSON.parse(localStorage.getItem("lastSearched")) || [];
-
+var imageURL = document.getElementById("img-url");
 date.textContent = timeOfDay;
+
+var title = document.querySelector(".card-title");
+var content = document.querySelector(".card-text");
+var link = document.querySelector(".article-link");
+newAPI();
+
+function newAPI() {
+  let queryURL =
+    "https://newsapi.org/v2/everything?q=NBA&from=2023-01-08&sortBy=publishedAt&apiKey=97e9ea9056d3431f917da94472eebcc0";
+  fetch(queryURL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      imageURL.setAttribute("src", data.articles[0].urlToImage);
+      title.textContent = data.articles[0].title;
+      content.textContent = data.articles[0].content;
+      link.setAttribute("href", data.articles[0].url);
+    });
+}
 
 function getAPI() {
   var queryURL =
