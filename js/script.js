@@ -10,7 +10,7 @@ var iconId = document.getElementById("emoji-icon");
 var date = document.getElementById("date");
 var timeOfDay = dayjs().format("MMMM D");
 var hourOfDay = dayjs().format("h:mm a");
-const foreCastElement = document.querySelectorAll(".forecast");
+const foreCast = document.querySelectorAll(".forecast");
 let lastSearch = JSON.parse(localStorage.getItem("lastSearched")) || [];
 var imageURL = document.getElementById("img-url");
 date.textContent = timeOfDay;
@@ -18,23 +18,6 @@ date.textContent = timeOfDay;
 var title = document.querySelector(".card-title");
 var content = document.querySelector(".card-text");
 var link = document.querySelector(".article-link");
-newAPI();
-
-function newAPI() {
-  let queryURL =
-    "https://newsapi.org/v2/everything?q=NBA&from=2023-01-08&sortBy=publishedAt&apiKey=97e9ea9056d3431f917da94472eebcc0";
-  fetch(queryURL)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      imageURL.setAttribute("src", data.articles[0].urlToImage);
-      title.textContent = data.articles[0].title;
-      content.textContent = data.articles[0].content;
-      link.setAttribute("href", data.articles[0].url);
-    });
-}
 
 function getAPI() {
   var queryURL =
@@ -107,12 +90,9 @@ function getApiFiveDay(city) {
       return response.json();
     })
     .then(function (data) {
-      for (let index = 0; index < foreCastElement.length; index++) {
-        foreCastElement[index].innerHTML = "";
+      for (let index = 0; index < foreCast.length; index++) {
+        foreCast[index].innerHTML = "";
         const forecastIndex = index * 8 + 4;
-        var hours = document.createElement("li");
-        hours.textContent = data.list[forecastIndex].dt_txt;
-        foreCastElement[index].append(hours);
         const foreCastWeatherImg = document.createElement("img");
         foreCastWeatherImg.setAttribute(
           "src",
@@ -124,19 +104,10 @@ function getApiFiveDay(city) {
           "alt",
           data.list[forecastIndex].weather[0].description
         );
-        foreCastElement[index].append(foreCastWeatherImg);
+        foreCast[index].append(foreCastWeatherImg);
         var tempTwo = document.createElement("li");
-        tempTwo.innerHTML = "Temp: " + data.list[forecastIndex].main.temp;
-        foreCastElement[index].append(tempTwo);
-        var windTwo = document.createElement("li");
-        windTwo.innerHTML =
-          "Wind: " + data.list[forecastIndex].wind.speed + " MPH";
-        foreCastElement[index].append(windTwo);
-        var humidityTwo = document.createElement("li");
-        foreCastElement[index].append(humidityTwo);
-        humidityTwo.innerHTML =
-          "humidity: " + data.list[forecastIndex].main.humidity + "%";
-        console.log(data.list[forecastIndex]);
+        tempTwo.innerHTML = data.list[forecastIndex].main.temp;
+        foreCast[index].append(tempTwo);
       }
     });
 }
@@ -152,20 +123,20 @@ button.addEventListener("click", function (event) {
 
 //changed the function to have the search and message variables to empty strings so that every time the function is ran, it will
 //replace the text and not append more lists
-function renderHistoryList() {
-  message.innerHTML = "";
-  for (let i = 0; i < lastSearch.length; i++) {
-    const historyLi = document.createElement("li");
-    historyLi.innerHTML = lastSearch[i];
-    message.append(historyLi);
-    historyLi.addEventListener("click", function (event) {
-      event.preventDefault();
-      getApiCurrentDay(historyLi.innerHTML);
-      getApiFiveDay(historyLi.innerHTML);
-      search.innerHTML = "";
-    });
-  }
-}
+// function renderHistoryList() {
+//   message.innerHTML = "";
+//   for (let i = 0; i < lastSearch.length; i++) {
+//     const historyLi = document.createElement("li");
+//     historyLi.innerHTML = lastSearch[i];
+//     message.append(historyLi);
+//     historyLi.addEventListener("click", function (event) {
+//       event.preventDefault();
+//       getApiCurrentDay(historyLi.innerHTML);
+//       getApiFiveDay(historyLi.innerHTML);
+//       search.innerHTML = "";
+//     });
+//   }
+// }
 
 SearchHistoryButton = document.getElementById("clear-history");
 

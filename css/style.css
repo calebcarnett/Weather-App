@@ -136,8 +136,6 @@ border-radius: 5px  5px 0px 0px;
     justify-content: center;
     width: 35%;
     flex-direction: column;
-    margin-left: 15%;
- 
 }
 
 #msg li {
@@ -188,11 +186,26 @@ color: white;
 
   .main-section {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
   }
+
+ .five-day {
+    display: flex;
+    background: rgb(157,175,184);
+    background: linear-gradient(90deg, rgba(157,175,184,1) 0%, rgba(60,92,184,1) 42%);
+    color: white;
+    padding: 0px 10px;
+    border-radius: 50px;
+ }
+
+ .middle-fiveday {
+    display: flex;
+ }
+
 
   @media screen and (max-width: 760px) {
     .columnbox  {
